@@ -1,5 +1,5 @@
 # Car Rental Store Management System
-Simple car rental store management system using Play Framework(Java 8) &amp; Angular 6
+Simple car rental store management system using Play Framework(Java 8) &amp; Angular 6 and mysql database
 
 * Add vehicles
 * Delete vehicles
