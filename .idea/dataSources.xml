@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="libraryDB" uuid="3085492d-dba7-4b65-b374-883808cdb69e">
+      <driver-ref>hsqldb.local</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.hsqldb.jdbc.JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:file:F:\Giga\IIT\2 Yr\OOP\CWK 01\giga-lms\app\Db\libraryDB/lms;sql.syntax_mys=true;shutdown=true;hsqldb.lock_file=false</jdbc-url>
+    </data-source>
+  </component>
+</project>

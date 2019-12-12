@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu|Source+Sans+Pro');
+
+body{
+  background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),url('./assets/back.jpg');
+  background-size: cover
+}
+
+h4, h3, span{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+mat-cell{
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.modal-open .modal {
+  opacity: 1;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.d-block {
+  display: block!important;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+  background-color: unset;
+  max-height: unset;
+  width: unset;
+}
+.fade {
+  transition: opacity .15s linear;
+}
+
+.modal-backdrop.show {
+  opacity: .5;
+}
+
+.modal-backdrop.fade {
+  opacity: .5;
+}
+.fade {
+  transition: opacity .15s linear;
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0);
+}
+
+.modal.fade .modal-dialog {
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+  -webkit-transform: translate(0,-25%);
+  transform: translate(0,-25%);
+}
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+}
+.modal-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
+}
+.modal-body {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+.modal-footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+@media (min-width: 576px){
+  .modal-dialog {
+    max-width: 450px;
+    margin: 15% auto;
+  }
+  .modal-dialog {
+    position: relative;
+    width: auto;
+    pointer-events: none;
+  }
+  .modal-content{
+    line-height: 1;
+  }
+}

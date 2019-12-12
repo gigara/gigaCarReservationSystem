@@ -1,0 +1,20 @@
+<div class="row books">
+  <mat-table [dataSource]='dataSource' matSort>
+        <ng-container matColumnDef="plateNumber">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>ISBN</mat-header-cell>
+            <mat-cell *matCellDef="let item">{{item.plateNumber}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="make">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+                <mat-cell *matCellDef="let item">{{item.make}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="model">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Sector</mat-header-cell>
+                <mat-cell *matCellDef="let item">{{item.model}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+

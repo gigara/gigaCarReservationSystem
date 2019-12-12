@@ -1,0 +1,87 @@
+<div class="modal-header">
+  <h4 class="modal-make">Add New Car</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    &times;
+  </button>
+</div>
+<div class="modal-body">
+
+  <form [formGroup]="addNewBookForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+    <label>Number Plate</label>
+    <input type="text" maxlength="9" formControlName="plateNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.plateNumber.errors }" />
+    <div *ngIf="submitted && f.plateNumber.errors" class="invalid-feedback">
+      <div *ngIf="f.plateNumber.errors.required">Number Plate is required</div>
+    </div>
+</div>
+<div class="form-group">
+  <label>Make</label>
+  <input type="text" formControlName="make" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.make.errors }" />
+  <div *ngIf="submitted && f.make.errors" class="invalid-feedback">
+    <div *ngIf="f.make.errors.required">Make is required</div>
+  </div>
+</div>
+<div class="form-group">
+  <label>Model</label>
+  <input type="text" formControlName="model" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.model.errors }" />
+  <div *ngIf="submitted && f.model.errors" class="invalid-feedback">
+    <div *ngIf="f.model.errors.required">Model is required</div>
+  </div>
+</div>
+
+  <div class="form-group">
+      <label>No. of Seats</label>
+      <input type="number" formControlName="noOfSeats" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.publisher.errors }" />
+      <div *ngIf="submitted && f.publisher.errors" class="invalid-feedback">
+          <div *ngIf="f.publisher.errors.required">No. of Seats is required</div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label>A/C</label>
+    <input type="text" formControlName="AC" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.publisheDate.errors }" />
+    <div *ngIf="submitted && f.publisheDate.errors" class="invalid-feedback">
+        <div *ngIf="f.publisheDate.errors.required">A/C is required</div>
+    </div>
+</div>
+  <div class="form-group">
+      <label>Transmission</label>
+      <input type="text" formControlName="transmission" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.noOfPages.errors }" />
+      <div *ngIf="submitted && f.noOfPages.errors" class="invalid-feedback">
+          <div *ngIf="f.noOfPages.errors.required">Transmission is required</div>
+      </div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success"[disabled]="!addNewBookForm.valid"> Add </button>
+    </div>
+  </form>
+
+<div class="LoaderBalls">
+        <div class="LoaderBalls__item"></div>
+        <div class="LoaderBalls__item"></div>
+        <div class="LoaderBalls__item"></div>
+</div>
+
+<div class="error">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+        <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
+        <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
+    </svg>
+</div>
+
+<div class="check_mark">
+    <div class="sa-icon sa-success animate">
+        <span class="sa-line sa-tip animateSuccessTip"></span>
+        <span class="sa-line sa-long animateSuccessLong"></span>
+        <div class="sa-placeholder"></div>
+        <div class="sa-fix"></div>
+    </div>
+</div>
+<div class="alert alert-error">
+    <strong>Error!</strong> {{responseMsg}}
+</div>
+<div class="alert alert-success">
+    <strong>Success!</strong> {{responseMsg}}
+</div>
+</div>
+

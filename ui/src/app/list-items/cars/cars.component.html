@@ -1,0 +1,67 @@
+<div class="row cars">
+  <h3>Cars</h3>
+  <ng-container class="search">
+    <!--                <input matInput (keyup)="applyFilter($event.target)" placeholder="Search">-->
+  </ng-container>
+  <div class="tableContainer">
+    <mat-table [dataSource]='dataSource' matSort matSortActive="make" matSortDirection="asc">
+      <ng-container matColumnDef="plateNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Plate No
+        </mat-header-cell>
+        <mat-cell *matCellDef="let car">{{car.plateNumber}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="make">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Make
+          <mat-form-field class="filter" floatLabel="never">
+            <mat-label>Search</mat-label>
+            <input matInput [formControl]="makeFilter">
+          </mat-form-field>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let car">{{car.make}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="model">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          Model
+          <mat-form-field class="filter" floatLabel="never">
+            <mat-label>Search</mat-label>
+            <input matInput [formControl]="modelFilter">
+          </mat-form-field>
+        </mat-header-cell>
+        <mat-cell *matCellDef="let car">{{car.model}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="noOfSeats">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>No of Seats</mat-header-cell>
+        <mat-cell *matCellDef="let car">{{car.noOfSeats}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="withAC">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>A/C</mat-header-cell>
+        <mat-cell *matCellDef="let car">{{car.withAC}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="transmission">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Transmission</mat-header-cell>
+        <mat-cell *matCellDef="let car">{{car.transmission}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="availability">
+        <mat-header-cell *matHeaderCellDef>Availablity</mat-header-cell>
+        <mat-cell *matCellDef="let car">
+          <div *ngIf="isAvailable(car.plateNumber); then T; else X"></div>
+          <ng-template #T><i class="material-icons available">playlist_add_check</i></ng-template>
+          <ng-template #X><i class="material-icons notAvailable">close</i></ng-template>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true;" color="primary"></mat-header-row>
+      <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+
+  <div class="float">
+    <button (click)="openFormModal()" class="btn-floating btn-large waves-effect waves-light red"><i
+      class="material-icons">add</i></button>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
+  </div>
+</div>
+
