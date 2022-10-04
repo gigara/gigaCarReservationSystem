@@ -8,17 +8,9 @@ Simple car rental store management system using Play Framework(Java 8) &amp; Ang
 * Availability check
 
 # How to run
-<code> 
-  cd ui
-</code>
-<code>
-  npm install
-</code>
-<code>
-  cd ..
-</code>
-<code>
-  sbt run
-</code>
+<code> cd ui</code><br />
+<code> npm install</code><br />
+<code> cd ..</code><br />
+<code> sbt run</code>
 
 This will automatically start both play server & angular server.
