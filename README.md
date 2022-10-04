@@ -11,12 +11,18 @@ Simple car rental store management system using Play Framework(Java 8) &amp; Ang
 <code> 
   cd ui
 </code>
+
+
 <code>
   npm install
 </code>
+
+
 <code>
   cd ..
 </code>
+
+
 <code>
   sbt run
 </code>
